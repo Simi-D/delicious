@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import { Link, useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 
 function Cuisine() {
   const [cuisine, setCuisine] = useState([]);
@@ -24,7 +24,7 @@ function Cuisine() {
         return (
           <Card key={item.id}>
             <img src={item.image} alt="" />
-            <h4>{item.title}</h4>
+            <h4>test{item.title}</h4>
           </Card>
         );
       })}
@@ -33,8 +33,8 @@ function Cuisine() {
 }
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(autofit, minmax(20rem, 1fr));
-  grid-gap: 3rem;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 2rem;
 `;
 
 const Card = styled.div`
@@ -50,4 +50,5 @@ const Card = styled.div`
     padding: 1rem;
   }
 `;
+
 export default Cuisine;
